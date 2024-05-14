@@ -1,9 +1,26 @@
-function App() {
+import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import Home from "./pages/Home";
+import { LoginPage } from "./pages/auth/Login";
+import NotFound from "./pages/NotFound";
+
+export default function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/login",
+      element: <LoginPage />,
+    },
+    {
+      path: "*",
+      element: <NotFound />,
+    },
+  ]);
   return (
-    <>
-      <div className=" p-4 w-96 h-96 bg-blue-600">hello</div>
-    </>
+    <div className="app">
+      <RouterProvider router={router} />
+    </div>
   );
 }
-
-export default App;

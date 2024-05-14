@@ -19,7 +19,7 @@ export default function App() {
     },
   ]);
   return (
-    <div className="app">
+    <div className="grid h-screen w-screen">
       <RouterProvider router={router} />
     </div>
   );
